@@ -1,0 +1,6 @@
+[submodule "inserarray"]
+	path = inserarray
+	url = https://github.com/Gellert5225/InsertArray
+[submodule "insertarray"]
+	path = insertarray
+	url = https://github.com/Gellert5225/InsertArray
