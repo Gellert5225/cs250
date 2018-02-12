@@ -31,6 +31,8 @@ std::string Pokemon::getType2() const {
 }
 
 bool Pokemon::commonType(Pokemon p) const {
+	if (p.secondType == "" && this->secondType == "") return this->firstType == p.firstType;
+
 	return this->firstType == p.firstType ||
 		this->secondType == p.secondType ||
 		this->firstType == p.secondType ||
