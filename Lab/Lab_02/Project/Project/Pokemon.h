@@ -1,3 +1,12 @@
+/*
+	Li, Gellert
+
+	CS A250
+	10th February, 2018
+
+	Lab 2 Pokemon
+*/
+
 #ifndef POKEMON_H
 #define POKEMON_H
 
