@@ -1,5 +1,10 @@
 /*
-	(name header)
+	Li, Gellert
+
+	CS A250
+	February 24, 2018
+
+	Lab 4: Delete Node
 */
 
 #include "AnyList.h"
@@ -69,7 +74,7 @@ void AnyList::deleteNode(int deleteData) {
 					current = nullptr;
 					trailCurrent = nullptr;
 					count--;
-					found == true;
+					found = true;
 				} else {
 					trailCurrent = current;
 					current = current->getPtrToNext();
