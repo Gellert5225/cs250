@@ -1,3 +1,12 @@
+/*
+	Li, Gellert & Wegener, Brian
+	Team: memoryLeak
+
+	CS A250
+	February 28th, 2018
+
+	Lab 5: Doubly-linked Lists
+*/
 #include "DoublyList.h"
 
 	// constructor

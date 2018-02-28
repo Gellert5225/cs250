@@ -1,5 +1,11 @@
 /*
-	Name header
+	Li, Gellert & Wegener, Brian
+	Team: memoryLeak
+
+	CS A250
+	February 28th, 2018
+
+	Lab 5: Doubly-linked Lists
 */
 
 #include "DoublyList.h"
@@ -36,15 +42,13 @@ void DoublyList::copyToList(DoublyList& list) const {
 	}
 }
 
+// traverse from beginning and the end
 void DoublyList::insertInOrder(const int element) {
 	if (isEmpty()) {
-		cout << "EMPTY" << endl;
 		insertFront(element);
-		count++;
 	} else {
 		if (first->getData() > element) {
 			insertFront(element);
-			count++;
 		} else {
 			Node *current = first;
 			bool done = false;
@@ -54,17 +58,15 @@ void DoublyList::insertInOrder(const int element) {
 					current->getPrev()->setNext(newNode);
 					current->setPrev(newNode);
 					done = true;
-					count++;
 				} else if (current->getNext() == nullptr) { // insert last
 					Node *newNode = new Node(element, current, nullptr);
 					current->setNext(newNode);
 					last = newNode;
-					count++;
 					done = true;
 				}
 				current = current->getNext();
 			}
 		}
-		
 	}
+	count++;
 }

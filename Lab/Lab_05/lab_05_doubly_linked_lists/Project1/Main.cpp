@@ -3,7 +3,15 @@
 	Class DoublyList
 
 ************************************************/
+/*
+	Li, Gellert & Wegener, Brian
+	Team: memoryLeak
 
+	CS A250
+	February 28th, 2018
+
+	Lab 5: Doubly-linked Lists
+*/
 #include "DoublyList.h"
 
 #include <iostream>
@@ -50,6 +58,18 @@ int main()
 	
 	cout << "\nYour testing cases...\n";
 	// Create your testing cases here.
+
+	DoublyList mylist;
+	mylist.insertInOrder(9);
+	mylist.insertInOrder(8);
+	mylist.insertInOrder(11);
+	mylist.insertInOrder(1);
+	mylist.insertInOrder(7);
+	mylist.insertInOrder(20);
+
+	mylist.print();
+	cout << endl;
+	mylist.reversePrint();
 
 	cout << endl << endl;
 	system("Pause");
