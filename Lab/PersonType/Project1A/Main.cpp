@@ -14,11 +14,7 @@
 #include <string>
 using namespace std;
 
-int main()
-{
-
-
-
+int main() {
 	cout << endl;
 	system("Pause");
 	return 0;
