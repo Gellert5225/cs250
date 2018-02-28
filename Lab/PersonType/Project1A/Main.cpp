@@ -1,6 +1,6 @@
 /*
 	Li, Gellert & Wegener, Brian
-	Team...
+	memoryLeak
 
 	CS A250
 	February 21, 2018
@@ -15,6 +15,20 @@
 using namespace std;
 
 int main() {
+
+	/* NEED TO HANDLE THE CASE WHERE SSN STARTS WITH 0 */
+
+	// defualt constructor
+
+	// overloaded constructor
+	PersonType *person = new PersonType("Gellert", "Li", 123456789);
+	person->printPersonInfo();
+
+	// test accessors and mutators
+	PersonType john;
+	john.setPersonInfo("John", "Smith", 100000001);
+	cout << john.getSSN();
+
 	cout << endl;
 	system("Pause");
 	return 0;

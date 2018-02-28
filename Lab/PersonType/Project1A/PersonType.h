@@ -1,11 +1,11 @@
 /*
-Li, Gellert & Wegener, Brian
-Team...
+	Li, Gellert & Wegener, Brian
+	memoryLeak
 
-CS A250
-February 21, 2018
+	CS A250
+	February 21, 2018
 
-Project 1 (Part A): PersonType Class
+	Project 1 (Part A): PersonType Class
 */
 
 #ifndef PERSONTYPE_H
