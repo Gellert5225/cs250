@@ -22,7 +22,7 @@ public:
 
 	PersonType(const string& newFirstName, const string& newLastName, int newSocialSecurity);
 
-	void setPersonInfo(const string& newFirstName, const string& newLastName, const int newSocialSecurity);
+	void setPersonInfo(const string& newFirstName, const string& newLastName, int newSocialSecurity);
 
 	string getFirstName() const;
 

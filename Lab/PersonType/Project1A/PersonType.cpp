@@ -22,7 +22,7 @@ PersonType::PersonType(const string &newFirstName, const string &newLastName, in
 }
 
 // This seems redundant with the overloaded constructor
-void PersonType::setPersonInfo(const string& newFirstName, const string& newLastName, const int newSocialSecurity) {
+void PersonType::setPersonInfo(const string& newFirstName, const string& newLastName, int newSocialSecurity) {
 	firstName = newFirstName;
 	lastName = newLastName;
 	socialSecurity = newSocialSecurity;
