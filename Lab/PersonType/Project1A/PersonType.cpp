@@ -46,7 +46,6 @@ void PersonType::printPersonInfo() const {
 	cout << printSSN() << " " << firstName << " " << lastName << endl;
 }
 
-// Work on later
 string PersonType::printSSN() const {
 	string ssn = std::to_string(socialSecurity);
 

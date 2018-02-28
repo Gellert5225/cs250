@@ -16,18 +16,14 @@ using namespace std;
 
 int main() {
 
-	/* NEED TO HANDLE THE CASE WHERE SSN STARTS WITH 0 */
-
-	// defualt constructor
-
 	// overloaded constructor
 	PersonType *person = new PersonType("Gellert", "Li", 123456789);
 	person->printPersonInfo();
 
-	// test accessors and mutators
+	// test default constructor, accessors and mutators
 	PersonType john;
 	john.setPersonInfo("John", "Smith", 100000001);
-	cout << john.getSSN();
+	john.printPersonInfo();
 
 	cout << endl;
 	system("Pause");
