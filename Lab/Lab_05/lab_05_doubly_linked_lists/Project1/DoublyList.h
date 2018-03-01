@@ -1,11 +1,11 @@
 /*
-Li, Gellert & Wegener, Brian
-Team: memoryLeak
+	Li, Gellert & Wegener, Brian
+	Team: memoryLeak
 
-CS A250
-February 28th, 2018
+	CS A250
+	February 28th, 2018
 
-Lab 5: Doubly-linked Lists
+	Lab 5: Doubly-linked Lists
 */
 
 #ifndef DOUBLYLIST_H
@@ -69,6 +69,8 @@ public:
 
 	// Declaration function insertInOrder
 	void insertInOrder(const int element);
+
+	void insertInOrder2(const int element);
 
 private:
     Node *first;	// pointer to the first node on the list

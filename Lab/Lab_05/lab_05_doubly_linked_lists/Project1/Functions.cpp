@@ -44,28 +44,53 @@ void DoublyList::copyToList(DoublyList& list) const {
 
 // traverse from beginning and the end
 void DoublyList::insertInOrder(const int element) {
-	if (isEmpty()) {
-		insertFront(element);
+	if (isEmpty() || first->getData() > element) insertFront(element);
+	else if (last->getData() < element) {
+		Node *newNode = new Node(element, last, nullptr);
+		last->setNext(newNode);
+		last = newNode;
 	} else {
-		if (first->getData() > element) {
-			insertFront(element);
-		} else {
-			Node *current = first;
-			bool done = false;
-			while (!done) {
-				if (current->getData() > element) {
-					Node *newNode = new Node(element, current->getPrev(), current);
-					current->getPrev()->setNext(newNode);
-					current->setPrev(newNode);
-					done = true;
-				} else if (current->getNext() == nullptr) { // insert last
-					Node *newNode = new Node(element, current, nullptr);
-					current->setNext(newNode);
-					last = newNode;
-					done = true;
-				}
-				current = current->getNext();
+		Node *begin = first;
+		Node *end = last;
+		bool done = false;
+
+		while (!done) {
+			if (begin->getData() > element) {
+				Node *newNode = new Node(element, begin->getPrev(), begin);
+				begin->getPrev()->setNext(newNode);
+				begin->setPrev(newNode);
+				done = true;
+			} else if (end->getData() < element) {
+				Node *newNode = new Node(element, end, end->getNext());
+				end->setNext(newNode);
+				end->getNext()->setPrev(newNode);
+				done = true;
 			}
+			begin = begin->getNext();
+			end = end->getPrev();
+		}
+	}
+	count++;
+}
+
+// old way(not efficient)
+void DoublyList::insertInOrder2(const int element) {
+	if (isEmpty() || first->getData() > element) insertFront(element);
+	else if (last->getData() < element) {
+		Node *newNode = new Node(element, last, nullptr);
+		last->setNext(newNode);
+		last = newNode;
+	} else {
+		Node *current = first;
+		bool done = false;
+		while (!done) {
+			if (current->getData() > element) {
+				Node *newNode = new Node(element, current->getPrev(), current);
+				current->getPrev()->setNext(newNode);
+				current->setPrev(newNode);
+				done = true;
+			}
+			current = current->getNext();
 		}
 	}
 	count++;
