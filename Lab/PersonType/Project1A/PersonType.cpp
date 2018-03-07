@@ -53,6 +53,7 @@ string PersonType::printSSN() const {
 		return ssn.substr(0, 3) + "-" + ssn.substr(3, 2) + "-" + ssn.substr(5);
 	} else {
 		cerr << "SSN must have 9 digits." << endl;
+		return "Invalid SSN";
 	}
 }
 

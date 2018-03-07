@@ -70,6 +70,7 @@ public:
 	// Declaration function insertInOrder
 	void insertInOrder(const int element);
 
+	// This is same, but not efficient
 	void insertInOrder2(const int element);
 
 private:

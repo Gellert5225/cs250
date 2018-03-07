@@ -27,7 +27,7 @@ int main()
 	intList.insertInOrder(18);
 	intList.insertInOrder(73);
 	intList.insertInOrder(49);
-	
+						 
 	cout << "TESTING: insertInOrder() and print()" 
 		<< "\n\nEXPECTED OUTPUT: "
 		<< "\nList: 18  21  37  49  53  73\n";
