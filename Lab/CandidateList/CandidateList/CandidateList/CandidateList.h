@@ -30,7 +30,21 @@ private:
 class CandidateList
 {
 public:
-	// Function declarations
+	// default constructor
+	CandidateList();
+
+	// member functions
+	void addCandidate(const CandidateType &candidate);
+	int getWinner() const;
+	bool searchCandidate(int ssn) const;
+	void printCandidateName(int ssn) const;
+	void printAllCandidates() const;
+	void printCandidateDivisionVotes(int ssn, int division) const;
+	void printCandidateTotalVotes(int ssn) const;
+	void destroyList();
+
+	// destructor
+	~CandidateList();
 
 private:
 	Node *first; 	// pointer to point to the first candidate in the list
