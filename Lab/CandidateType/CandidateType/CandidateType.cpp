@@ -3,7 +3,7 @@
 	Team: memoryLeak
 
 	CS A250
-	March 7th, 2018
+	March 7, 2018
 
 	Candidate Type
 */
