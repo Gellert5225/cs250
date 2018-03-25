@@ -1,5 +1,11 @@
 /*
-	(name header)
+	Li, Gellert & Wegener, Brian
+
+	Team: memoryLeak
+
+	CS A250
+	March 14, 2018
+	Candidate List
 */
 
 #include "CandidateList.h"
@@ -16,7 +22,10 @@ void CandidateList::addCandidate(const CandidateType &candidate) {
 		first = new Node(candidate, nullptr);
 	} else {
 		Node *node = new Node(candidate, nullptr);
-		last->setLink(node);
+		if (count == 1) first->setLink(node);
+		else {
+			last->setLink(node);
+		}
 		last = node;
 	}
 	count++;
@@ -107,7 +116,7 @@ void CandidateList::printCandidateTotalVotes(int ssn) const {
 	while (!found && candidateNode != nullptr) {
 		if (candidateNode->getCandidate().getSSN() == ssn) {
 			found = true;
-			cout << candidateNode->getCandidate().getTotalVotes() << endl;
+			cout << "    => Total votes: " << candidateNode->getCandidate().getTotalVotes() << endl;
 		}
 		candidateNode = candidateNode->getLink();
 	}

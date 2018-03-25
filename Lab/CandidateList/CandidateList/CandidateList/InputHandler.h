@@ -1,5 +1,11 @@
 /*
-	(name header)
+	Li, Gellert & Wegener, Brian
+
+	Team: memoryLeak
+
+	CS A250
+	March 14, 2018
+	Candidate List
 */
 
 #include "CandidateList.h"

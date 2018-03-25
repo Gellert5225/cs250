@@ -1,11 +1,11 @@
 /*
 	Li, Gellert & Wegener, Brian
-	memoryLeak
+
+	Team: memoryLeak
 
 	CS A250
-	February 21, 2018
-
-	Project 1 (Part A): PersonType Class
+	March 14, 2018
+	Candidate List
 */
 
 #include "PersonType.h"
@@ -39,7 +39,7 @@ int PersonType::getSSN() const {
 }
 
 void PersonType::printName() const {
-	cout << lastName << ", " << firstName << endl;
+	cout << lastName << ", " << firstName;
 }
 
 void PersonType::printPersonInfo() const {

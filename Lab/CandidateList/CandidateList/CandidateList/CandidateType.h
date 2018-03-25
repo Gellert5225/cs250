@@ -1,10 +1,12 @@
+
 /*
 	Li, Gellert & Wegener, Brian
+
 	Team: memoryLeak
 
 	CS A250
-	March 7, 2018
-	Candidate Type
+	March 14, 2018
+	Candidate List
 */
 
 #ifndef CANDIDATETYPE_H

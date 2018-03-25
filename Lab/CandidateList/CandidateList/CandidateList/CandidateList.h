@@ -1,6 +1,13 @@
 /*
-	(name header)
+	Li, Gellert & Wegener, Brian
+
+	Team: memoryLeak
+
+	CS A250
+	March 14, 2018
+	Candidate List
 */
+
 
 #ifndef CANDIDATELIST_H
 #define CANDIDATELIST_H

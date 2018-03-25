@@ -1,11 +1,11 @@
 /*
 	Li, Gellert & Wegener, Brian
+
 	Team: memoryLeak
 
 	CS A250
-	March 7, 2018
-
-	Candidate Type
+	March 14, 2018
+	Candidate List
 */
 
 #include "CandidateType.h"
@@ -16,7 +16,7 @@ CandidateType::CandidateType()
 }
 
 void CandidateType::updateVotesByDivision(int divisionNumber, int numVotes) {
-	divisions[divisionNumber - 1] = numVotes;
+	divisions[divisionNumber] = numVotes;
 	this->numberOfVotes += numVotes;
 }
 
@@ -38,8 +38,7 @@ void CandidateType::printCandidateTotalVotes() const {
 }
 
 void CandidateType::printCandidateDivisionVotes(int divisionNumber) const {
-	printName();
-	cout << "=> Division " << divisionNumber << "total votes: " << divisions[divisionNumber - 1] << endl;
+	cout << "   => Division " << divisionNumber << ": "<< divisions[divisionNumber - 1] << endl;
 }
 
 CandidateType::~CandidateType() {}
