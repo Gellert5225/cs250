@@ -101,8 +101,11 @@ void CandidateList::printFinalResults() {
 	int counter = 1;
 	Node *current = sort(*this);
 	while (current != nullptr) {
-		cout << counter << "  " << current->getCandidate().getTotalVotes() << " " 
-			<< current->getCandidate().getFirstName() << ", " << current->getCandidate().getLastName() << endl;
+		cout.width(2);
+		cout << right << counter;
+		cout.width(5);
+		cout << right << current->getCandidate().getTotalVotes() << " ";
+		cout << current->getCandidate().getFirstName() << ", " << current->getCandidate().getLastName() << endl;
 		current = current->getLink();
 		counter++;
 	}

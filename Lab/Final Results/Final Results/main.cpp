@@ -25,7 +25,6 @@ int main() {
 	displayMenu();
 	processChoice(candidateList);
 
-	candidateList.printFinalResults();
 	cout << endl;
 	system("Pause");
 	return 0;
@@ -38,7 +37,8 @@ void displayMenu() {
 	cout << "    2: Print a candidate's division votes" << endl;
 	cout << "    3: Print a candidate's total votes" << endl;
 	cout << "    4: Print winner" << endl;
-	cout << "    5: To exit" << endl;
+	cout << "    5: Print final results" << endl;
+	cout << "    6: To exit" << endl;
 }
 
 void processChoice(CandidateList& candidateList) {
@@ -46,7 +46,7 @@ void processChoice(CandidateList& candidateList) {
 	cout << "\nEnter your choice: ";
 	cin >> choice;
 
-	while (choice != 5) {
+	while (choice != 6) {
 		string fName, lName;
 		int division = 0,
 			ssn = 0;
@@ -110,6 +110,6 @@ void processChoice(CandidateList& candidateList) {
 		cin >> choice;
 	}
 
-	if (choice == 5)
+	if (choice == 6)
 		cout << "\nThank you and have a great day!" << endl;
 }
