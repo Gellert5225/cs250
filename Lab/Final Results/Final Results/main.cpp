@@ -1,11 +1,12 @@
 /*
-Li, Gellert & Wegener, Brian
+	Li, Gellert
+	Wegener, Brian
 
-Team: memoryLeak
+	Team: memoryLeak
 
-CS A250
-March 14, 2018
-Candidate List
+	CS A250
+	March 4, 2018
+	Project 1 (Part D) - Final Results
 */
 
 #include "InputHandler.h"
@@ -104,12 +105,8 @@ void processChoice(CandidateList& candidateList) {
 		}
 
 		cout << endl;
-		system("Pause");
 		displayMenu();
 		cout << "\nEnter your choice: ";
 		cin >> choice;
 	}
-
-	if (choice == 6)
-		cout << "\nThank you and have a great day!" << endl;
 }

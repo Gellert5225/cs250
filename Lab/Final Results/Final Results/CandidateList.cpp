@@ -94,23 +94,6 @@ void CandidateList::destroyList() {
 	count = 0;
 }
 
-void CandidateList::printFinalResults() {
-	// find max vote first
-	CandidateList finalList;
-
-	int counter = 1;
-	Node *current = sort(*this);
-	while (current != nullptr) {
-		cout.width(2);
-		cout << right << counter;
-		cout.width(5);
-		cout << right << current->getCandidate().getTotalVotes() << " ";
-		cout << current->getCandidate().getFirstName() << ", " << current->getCandidate().getLastName() << endl;
-		current = current->getLink();
-		counter++;
-	}
-}
-
 CandidateList::~CandidateList() {
 	destroyList();
 }
@@ -137,6 +120,24 @@ bool CandidateList::searchCandidate(int ssn, Node* &candidate) const {
 bool CandidateList::searchCandidate(int ssn) const {
 	Node *n = nullptr;
 	return searchCandidate(ssn, n);
+}
+
+void CandidateList::printFinalResults() {
+	// find max vote first
+	CandidateList finalList;
+
+	int counter = 1;
+	first = sort(*this);
+	Node *current = first;
+	while (current != nullptr) {
+		cout.width(2);
+		cout << right << counter;
+		cout.width(5);
+		cout << right << current->getCandidate().getTotalVotes() << " ";
+		cout << current->getCandidate().getLastName() << ", " << current->getCandidate().getFirstName() << endl;
+		current = current->getLink();
+		counter++;
+	}
 }
 
 Node* sort(CandidateList &list) {

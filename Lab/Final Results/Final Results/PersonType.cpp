@@ -44,7 +44,7 @@ void PersonType::printName() const {
 }
 
 void PersonType::printPersonInfo() const {
-	cout << printSSN() << " " << lastName << ", " << firstName << endl;
+	cout << printSSN() << " - " << lastName << ", " << firstName << endl;
 }
 
 string PersonType::printSSN() const {
