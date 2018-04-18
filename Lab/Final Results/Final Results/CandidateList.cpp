@@ -1,12 +1,10 @@
 /*
+	memoryLeak
+
 	Li, Gellert
 	Wegener, Brian
 
-	Team: memoryLeak
-
-	CS A250
-	March 4, 2018
-	Project 1 (Part D) - Final Results
+	CS A250: Final Testing
 */
 
 #include "CandidateList.h"
@@ -24,9 +22,8 @@ void CandidateList::addCandidate(const CandidateType &candidate) {
 	} else {
 		Node *node = new Node(candidate, nullptr);
 		if (count == 1) first->setLink(node);
-		else {
-			last->setLink(node);
-		}
+		else last->setLink(node);
+		
 		last = node;
 	}
 	count++;
@@ -40,7 +37,8 @@ int CandidateList::getWinner() const {
 	Node *candidateNode = first;
 	CandidateType winner = first->getCandidate();
 	while (candidateNode != nullptr) {
-		if (candidateNode->getCandidate().getTotalVotes() > winner.getTotalVotes()) winner = candidateNode->getCandidate();
+		if (candidateNode->getCandidate().getTotalVotes() > winner.getTotalVotes()) 
+			winner = candidateNode->getCandidate();
 		candidateNode = candidateNode->getLink();
 	}
 	return winner.getSSN();
@@ -57,13 +55,13 @@ void CandidateList::printCandidateName(int ssn) const {
 void CandidateList::printAllCandidates() const {
 	if (count == 0) {
 		cerr << "=>List is empty." << endl;
-		return;
-	}
+	} else {
+		Node *candidateNode = first;
 
-	Node *candidateNode = first;
-	while ( candidateNode != nullptr) {
-		candidateNode->getCandidate().printCandidateInfo();
-		candidateNode = candidateNode->getLink();
+		while (candidateNode != nullptr) {
+			candidateNode->getCandidate().printCandidateInfo();
+			candidateNode = candidateNode->getLink();
+		}
 	}
 }
 
@@ -84,6 +82,7 @@ void CandidateList::printCandidateTotalVotes(int ssn) const {
 	}
 }
 
+/* no need to declare another pointer */
 void CandidateList::destroyList() {
 	while (first != nullptr) {
 		Node *candidateNode = first;
@@ -91,6 +90,7 @@ void CandidateList::destroyList() {
 		delete candidateNode;
 		candidateNode = nullptr;
 	}
+	last = nullptr;
 	count = 0;
 }
 
@@ -98,6 +98,7 @@ CandidateList::~CandidateList() {
 	destroyList();
 }
 
+/* should we use else? */
 bool CandidateList::searchCandidate(int ssn, Node* &candidate) const {
 	if (count == 0) {
 		cerr << "=>List is empty" << endl;
@@ -141,7 +142,7 @@ void CandidateList::printFinalResults() {
 }
 
 Node* sort(CandidateList &list) {
-	if (list.count == 0) return nullptr;
+	if (list.first == nullptr) return nullptr;
 	// get the max node
 	Node *maxNode = getMax(list);
 
@@ -162,10 +163,9 @@ Node* sort(CandidateList &list) {
 		list.first->setLink(maxNode->getLink());
 		maxNode->setLink(list.first);
 	}
-	list.first = maxNode;
 
+	list.first = maxNode;
 	list.first = list.first->getLink();
-	list.count--;
 
 	maxNode->setLink(sort(list));
 

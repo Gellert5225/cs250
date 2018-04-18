@@ -48,14 +48,12 @@ void PersonType::printPersonInfo() const {
 }
 
 string PersonType::printSSN() const {
-	string ssn = std::to_string(socialSecurity);
+	
+	int thirdPart = socialSecurity % 10000;
+	int secondPart = socialSecurity / 10000 % 100;
+	int firstPart = socialSecurity / 1000000;
 
-	if (static_cast<int>(ssn.size()) == 9) {
-		return ssn.substr(0, 3) + "-" + ssn.substr(3, 2) + "-" + ssn.substr(5);
-	} else {
-		cerr << "SSN must have 9 digits." << endl;
-		return "Invalid SSN";
-	}
+	return to_string(firstPart) + "-" + to_string(secondPart) + "-" + to_string(thirdPart);
 }
 
 PersonType::~PersonType() {}

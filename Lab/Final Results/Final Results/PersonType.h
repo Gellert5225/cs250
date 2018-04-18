@@ -1,12 +1,10 @@
 /*
+	memoryLeak
+
 	Li, Gellert
 	Wegener, Brian
 
-	Team: memoryLeak
-
-	CS A250
-	March 4, 2018
-	Project 1 (Part D) - Final Results
+	CS A250: Final Testing
 */
 
 #ifndef PERSONTYPE_H
@@ -14,6 +12,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class PersonType

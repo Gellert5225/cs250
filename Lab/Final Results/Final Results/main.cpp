@@ -98,6 +98,7 @@ void processChoice(CandidateList& candidateList) {
 			break;
 		case 5:
 			candidateList.printFinalResults();
+			//system("PAUSE");
 			break;
 
 		default:
