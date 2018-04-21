@@ -24,7 +24,7 @@ template <typename T>
 DArray<T>::DArray( )
 {
     capacity = CAP;
-	a = new int[capacity];	
+	a = new T[capacity];	
 	numOfElem = 0;
 }
 
@@ -40,7 +40,7 @@ template <typename T>
 DArray<T>::DArray(const DArray<T>& otherArray)
 {
 	capacity = otherArray.capacity;	
-	a = new int[capacity];
+	a = new T[capacity];
 	numOfElem = otherArray.numOfElem;
 
 	for (int i = 0; i < numOfElem; ++i)
@@ -80,7 +80,7 @@ DArray<T>& DArray<T>::operator=(const DArray<T>& otherArray)
 		if (capacity != otherArray.capacity)
 		{
 			delete[] a; //release space
-			a = new int[otherArray.capacity];
+			a = new T[otherArray.capacity];
 			capacity = otherArray.capacity;
 		}
 		for (int i = 0; i < otherArray.numOfElem; ++i)
@@ -111,7 +111,7 @@ void DArray<T>::deleteElement(const T& element) {
 	for (int i = 0; i < numOfElem; ++i) {
 		if (!shouldShift)
 			shouldShift = a[i] == element;
-		if (shouldShift) {
+		if (shouldShift && i != 3) {
 			a[i] = a[i + 1];
 		}
 	}
