@@ -1,3 +1,3 @@
 ﻿  Main.cpp
-c:\cs 250\lab\lab_11\lab_11_stl_sequence_containers\project1\main.cpp(62): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\cs 250\lab\lab_11\lab_11_stl_sequence_containers\project1\main.cpp(64): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Project1.vcxproj -> C:\CS 250\Lab\Lab_11\lab_11_stl_sequence_containers\x64\Debug\Project1.exe

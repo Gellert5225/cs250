@@ -3,9 +3,9 @@
 	Team: memoryLeak
 
 	CS A250
-	February 28th, 2018
+	April 28th, 2018
 
-	Lab 5: Doubly-linked Lists
+	Lab 5: Doubly-linked Lists - Re-submission
 */
 
 #include "DoublyList.h"
@@ -43,12 +43,13 @@ void DoublyList::copyToList(DoublyList& list) const {
 }
 
 // traverse from beginning and the end
-void DoublyList::insertInOrder(const int element) {
+void DoublyList::insertInOrder(int element) {
 	if (isEmpty() || first->getData() > element) insertFront(element);
 	else if (last->getData() < element) {
 		Node *newNode = new Node(element, last, nullptr);
 		last->setNext(newNode);
 		last = newNode;
+		count++;
 	} else {
 		Node *begin = first;
 		Node *end = last;
@@ -63,18 +64,18 @@ void DoublyList::insertInOrder(const int element) {
 			} else if (end->getData() < element) {
 				Node *newNode = new Node(element, end, end->getNext());
 				end->setNext(newNode);
-				end->getNext()->setPrev(newNode);
+				end->getNext()->getNext()->setPrev(newNode);
 				done = true;
 			}
 			begin = begin->getNext();
 			end = end->getPrev();
 		}
+		count++;
 	}
-	count++;
 }
 
 // old way(not efficient)
-void DoublyList::insertInOrder2(const int element) {
+void DoublyList::insertInOrder2(int element) {
 	if (isEmpty() || first->getData() > element) insertFront(element);
 	else if (last->getData() < element) {
 		Node *newNode = new Node(element, last, nullptr);

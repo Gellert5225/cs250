@@ -1,5 +1,10 @@
 /*
-	(name header)
+	Li, Gellert
+
+	CS A250
+	18th April, 2018
+
+	Lab 10: DArray Class
 */
 
 

@@ -1,3 +1,12 @@
+/*
+	Li, Gellert
+
+	CS A250
+	28th April, 2018
+
+	Lab 11
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -9,27 +18,13 @@ using namespace std;
 // The function passes a vector and prints all
 // the elements on one line, separated by a space.
 // Use an iterator and a FOR loop.
-void printVector(vector<int> &v) {
-	vector<int>::iterator iter = v.begin();
-	for (int i = 0; i < v.size(); i++) {
-		cout << *iter << " ";
-		iter++;
-	}
-	cout << endl;
-}
+void printVector(const vector<int> &v);
 
 // Declaration function printList.
 // The function passes a list and prints all
 // the elements on one line, separated by a space.
 // Use an iterator and a WHILE loop.
-void printList(list<int> &aList) {
-	list<int>::iterator iter = aList.begin();
-	for (int i = 0; i < aList.size(); i++) {
-		cout << *iter << " ";
-		iter++;
-	}
-	cout << endl;
-}
+void printList(const list<int> &aList);
 
 
 int main()
@@ -275,40 +270,44 @@ int main()
 	intList2 = intList1;
 
 	// Call function printList to print intList2.
-
+	printList(intList2);
 
 	// void unique();
 	// Using function unique, remove all consecutive duplicates in the first list.
-
+	intList1.unique();
 
 	// Call function printList to print intList1.
-
+	printList(intList1);
 
 	// void sort();
 	// Using function sort, sort all elements in the second list.
 	// (Notice that the function sort can be used only if there are no duplicates.)
-
+	intList2.sort();
 
 	// Call function printList to print intList2.
-
+	printList(intList2);
 			
 	// void push_back (const value_type& val);
 	//Insert the following elements in the third list:
 	//  13 23 25 136 198
-
+	intList3.push_back(13);
+	intList3.push_back(23);
+	intList3.push_back(25);
+	intList3.push_back(136);
+	intList3.push_back(198);
 
 	// Call function printList to print intList3.
-
+	printList(intList3);
 
 	// void merge (list& x);
 	// Add to the second list all elements of the third list(browse the  
 	//  list of functions in cplusplus.com to figure out which function  
 	//  you need to use).
 	// --> This is ONE statement only.
-
+	intList2.merge(intList3);
 
 	// Call function printList to print intList2.
-
+	printList(intList2);
 
 
 	/*************************************************************************
@@ -355,12 +354,29 @@ int main()
 
 	cout << "\n\n----------------------------------------------------";
 
-	cout  <<  endl;
+	cout << endl;
 	system("Pause");
 	return 0;
 }
 
 // Definition function printVector
+void printVector(const vector<int> &v) {
+	vector<int>::const_iterator iter = v.cbegin();
+	vector<int>::const_iterator iterEnd = v.cend();
 
+	for (iter; iter != iterEnd; ++iter) {
+		cout << *iter << " ";
+	}
+	cout << endl;
+}
 
 // Definition function printList
+void printList(const list<int> &aList) {
+	list<int>::const_iterator iter = aList.cbegin();
+	list<int>::const_iterator iterEnd = aList.cend();
+	while (iter != iterEnd) {
+		cout << *iter << " ";
+		++iter;
+	}
+	cout << endl;
+}
